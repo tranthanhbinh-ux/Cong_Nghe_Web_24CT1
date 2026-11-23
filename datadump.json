@@ -1,0 +1,290 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Ieb85pOP6FEE70sNQwOaU1$TR4pmhtKSVxbLd+RGKe+VI7oLcFLnbG9TFKAd9u6XfY=",
+    "last_login": "2026-11-23T10:07:00.697Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Quản Trị Viên",
+    "last_name": "",
+    "email": "admin@buildgear.vn",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-05T15:24:55.638Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$o8xnZikdLtP4ZgikIu3HVZ$GmrwKTYoj4aawscaSIZ6iFUIOG7I8kSROC+XKGMo97s=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "customer",
+    "first_name": "Nguyễn Văn A",
+    "last_name": "",
+    "email": "khachhang@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-05T15:24:56.118Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6oth7sfw3fvejtu8ejmp85ixy9opwgcs",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlm2E_8o6TmDtetd4wBypDipEHeHSCmgfTPzXiLBtta0dV7SROIstDj9bgj5wW0HdId2m2We27pMKHdFHrTL60z8vBzu30GFXr-1xcAqGoc2D8EajTS4EZm4kPExewhOG6uVD6Ygso-js-QUW88ABbV4fwDe3jgK:1xOzO3:Z162v8YV0Ws8OOY7R484YM4yme7Z1pCqUkGpAUoj8UQ",
+    "expire_date": "2026-11-19T15:28:23.539Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ikkpfh2ndauz0a0tjxkigpimr0f6g6x0",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlm2E_8o6TmDtetd4wBypDipEHeHSCmgfTPzXiLBtta0dV7SROIstDj9bgj5wW0HdId2m2We27pMKHdFHrTL60z8vBzu30GFXr-1xcAqGoc2D8EajTS4EZm4kPExewhOG6uVD6Ygso-js-QUW88ABbV4fwDe3jgK:1xVQwu:MNPEVQc3jV4UnLE6twZut1rmLshzrgRKhbtq5PTvdMs",
+    "expire_date": "2026-12-07T10:07:00.716Z"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "CPU - Bộ vi xử lý",
+    "description": "Bộ vi xử lý trung tâm cho máy tính Intel và AMD"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "VGA - Card màn hình",
+    "description": "Card đồ họa xử lý hình ảnh, chơi game, đồ họa"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Mainboard - Bo mạch chủ",
+    "description": "Bo mạch chủ kết nối các linh kiện"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "RAM - Bộ nhớ trong",
+    "description": "RAM DDR4, DDR5 tốc độ cao cho PC"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Ổ cứng SSD / HDD",
+    "description": "Ổ cứng lưu trữ dữ liệu tốc độ cao NVMe, SATA"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "PSU - Nguồn máy tính",
+    "description": "Nguồn cấp điện ổn định chuẩn 80 Plus"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 7,
+  "fields": {
+    "name": "Case - Vỏ máy tính",
+    "description": "Vỏ case kính cường lực, airflow thoáng mát"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 1,
+  "fields": {
+    "name": "Intel"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 2,
+  "fields": {
+    "name": "AMD"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 3,
+  "fields": {
+    "name": "NVIDIA"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 4,
+  "fields": {
+    "name": "ASUS"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 5,
+  "fields": {
+    "name": "MSI"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 6,
+  "fields": {
+    "name": "GIGABYTE"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 7,
+  "fields": {
+    "name": "Corsair"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 8,
+  "fields": {
+    "name": "Kingston"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "name": "CPU Intel Core i5-13400F",
+    "category": 1,
+    "brand": 1,
+    "price": "5290000",
+    "discount_price": "4890000",
+    "stock_quantity": 20,
+    "image": "",
+    "image_url": "/static/images/cpu-i5-13400f.svg",
+    "specifications": "10 Nhân 16 Luồng, Turbo 4.60 GHz, 20MB Cache, Socket LGA 1700",
+    "description": "CPU quốc dân tầm trung chơi game và làm việc cực mượt mà không lo giật lag.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.494Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "name": "CPU AMD Ryzen 5 7600",
+    "category": 1,
+    "brand": 2,
+    "price": "5990000",
+    "discount_price": "5500000",
+    "stock_quantity": 15,
+    "image": "",
+    "image_url": "/static/images/cpu-r5-7600.svg",
+    "specifications": "6 Nhân 12 Luồng, Turbo 5.1 GHz, 38MB Cache, Socket AM5",
+    "description": "CPU thế hệ mới của AMD với kiến trúc Zen 4 mạnh mẽ, tối ưu hoá tối đa cho game thủ.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.510Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "name": "VGA ASUS Dual GeForce RTX 4060 EVO OC 8GB",
+    "category": 2,
+    "brand": 4,
+    "price": "8890000",
+    "discount_price": "8490000",
+    "stock_quantity": 10,
+    "image": "",
+    "image_url": "/static/images/vga-rtx4060-asus.svg",
+    "specifications": "8GB GDDR6, 128-bit, PCIe 4.0, 2 Quạt tản nhiệt, DLSS 3",
+    "description": "Card đồ họa bán chạy nhất phân khúc chiến game 1080p và 2K với công nghệ DLSS 3 siêu tốc.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.510Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "name": "Mainboard MSI B760M GAMING PLUS WIFI DDR5",
+    "category": 3,
+    "brand": 5,
+    "price": "3890000",
+    "discount_price": "3650000",
+    "stock_quantity": 25,
+    "image": "",
+    "image_url": "/static/images/main-msi-b760m.svg",
+    "specifications": "Socket LGA 1700, 4 khe DDR5, PCIe 4.0, Wifi 6E tích hợp",
+    "description": "Mainboard tầm trung tối ưu cho CPU Intel Gen 12, 13, 14 với tản nhiệt VRM dày dặn.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.526Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "name": "RAM Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
+    "category": 4,
+    "brand": 7,
+    "price": "3490000",
+    "discount_price": "3190000",
+    "stock_quantity": 30,
+    "image": "",
+    "image_url": "/static/images/ram-corsair-ddr5.svg",
+    "specifications": "Kit 32GB (2x16GB), Bus 6000MHz, Chuẩn DDR5, Đèn LED RGB",
+    "description": "RAM hiệu năng cao hỗ trợ Intel XMP 3.0 và AMD EXPO, hệ thống LED RGB rực rỡ.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.542Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "name": "Ổ cứng SSD Kingston NV2 1TB PCIe Gen4 NVMe M.2",
+    "category": 5,
+    "brand": 8,
+    "price": "1790000",
+    "discount_price": "1590000",
+    "stock_quantity": 50,
+    "image": "",
+    "image_url": "/static/images/ssd-kingston-1tb.svg",
+    "specifications": "Dung lượng 1TB, Chuẩn NVMe Gen 4x4, Tốc độ đọc 3500MB/s, ghi 2100MB/s",
+    "description": "Ổ cứng tốc độ cao khởi động hệ điều hành và tải game nặng trong tích tắc.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.542Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "name": "Nguồn Corsair CV650 650W 80 Plus Bronze",
+    "category": 6,
+    "brand": 7,
+    "price": "1590000",
+    "discount_price": "1390000",
+    "stock_quantity": 40,
+    "image": "",
+    "image_url": "/static/images/psu-corsair-cv650.svg",
+    "specifications": "Công suất 650W, Chuẩn 80 Plus Bronze, Quạt tản 120mm êm ái",
+    "description": "Cung cấp nguồn điện ổn định cho hệ thống PC gaming hiện đại.",
+    "is_active": true,
+    "created_at": "2026-11-05T15:27:51.558Z"
+  }
+}
+]

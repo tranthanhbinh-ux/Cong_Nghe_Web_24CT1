@@ -1,0 +1,79 @@
+{% extends 'store/base.html' %}
+{% load humanize %}
+
+{% block title %}Thanh Toán Đơn Hàng - BuildGear{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h2 class="fw-bold"><i class="fa-solid fa-truck-fast text-info me-2"></i>Thông Tin Giao Hàng & Thanh Toán</h2>
+    <p class="text-secondary">Vui lòng điền thông tin để BuildGear liên hệ giao linh kiện tới tận nhà bạn</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row g-4">
+        <!-- Delivery info -->
+        <div class="col-lg-7">
+            <div class="card shadow-sm border-0 rounded-3 p-4 bg-white">
+                <h5 class="fw-bold mb-3 border-bottom pb-2">Người Nhận Hàng</h5>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Họ và tên người nhận <span class="text-danger">*</span></label>
+                    <input type="text" name="customer_name" class="form-control" value="{{ initial_name }}" placeholder="Ví dụ: Nguyễn Văn An" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Số điện thoại liên hệ <span class="text-danger">*</span></label>
+                    <input type="text" name="customer_phone" class="form-control" value="{{ initial_phone }}" placeholder="Ví dụ: 0912345678" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Địa chỉ giao hàng chi tiết <span class="text-danger">*</span></label>
+                    <input type="text" name="shipping_address" class="form-control" value="{{ initial_address }}" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Ghi chú giao hàng (nếu có)</label>
+                    <textarea name="note" class="form-control" rows="3" placeholder="Ví dụ: Giao giờ hành chính, gọi trước khi giao..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order items summary -->
+        <div class="col-lg-5">
+            <div class="card shadow-sm border-0 rounded-3 p-4 bg-white">
+                <h5 class="fw-bold mb-3 border-bottom pb-2">Linh Kiện Trong Đơn ({{ cart_items|length }})</h5>
+
+                <ul class="list-group list-group-flush mb-3">
+                    {% for item in cart_items %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                                <h6 class="my-0 fw-bold small text-dark">{{ item.name }}</h6>
+                                <small class="text-muted">SL: {{ item.quantity }} x {{ item.unit_price|intcomma }} đ</small>
+                            </div>
+                            <span class="fw-bold text-secondary">{{ item.subtotal|intcomma }} đ</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary">Phí ship:</span>
+                    <span class="text-success fw-bold">0 đ (Freeship)</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-baseline mb-4 border-top pt-2">
+                    <span class="fs-5 fw-bold">Tổng thanh toán:</span>
+                    <span class="fs-4 fw-bold text-danger">{{ total_amount|intcomma }} đ</span>
+                </div>
+
+                <div class="alert alert-info py-2 small mb-3">
+                    <i class="fa-solid fa-money-bill-wave me-1"></i> Hình thức: Thanh toán khi nhận hàng (COD).
+                </div>
+
+                <button type="submit" class="btn btn-danger btn-lg fw-bold w-100 py-3 shadow">
+                    <i class="fa-solid fa-check-circle me-2"></i>Xác Nhận Đặt Hàng Ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

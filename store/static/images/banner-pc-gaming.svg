@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cyberBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="40%" stop-color="#0b172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="rgbFan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#ff0844"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#cyberBg)" rx="18"/>
+  <circle cx="1000" cy="200" r="180" fill="#3b82f6" opacity="0.25" filter="blur(60px)"/>
+  <circle cx="850" cy="120" r="130" fill="#ec4899" opacity="0.2" filter="blur(50px)"/>
+  <g transform="translate(60, 50)">
+    <rect x="0" y="0" width="220" height="34" rx="17" fill="url(#neonPink)"/>
+    <text x="110" y="22" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">🔥 SIÊU HỘI LINH KIỆN PC</text>
+    <text x="0" y="95" font-family="'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="900" fill="#ffffff" letter-spacing="0.5">
+      BUILDGEAR <tspan fill="url(#neonCyan)">GAMING PC</tspan>
+    </text>
+    <text x="0" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">
+      Cấu Hình Đỉnh Cao • Bứt Phá Mọi Giới Hạn
+    </text>
+    <text x="0" y="195" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#94a3b8">
+      ✓ RTX 40 Series / Intel Gen 14 / AMD Ryzen 7000 Series
+    </text>
+    <text x="0" y="225" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#94a3b8">
+      ✓ Cam kết chính hãng 100% • Bảo hành 1 đổi 1 trong 30 ngày • Miễn phí vận chuyển
+    </text>
+  </g>
+</svg>

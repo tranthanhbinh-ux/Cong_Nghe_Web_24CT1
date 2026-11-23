@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad)" rx="16"/>
+  <rect x="110" y="50" width="180" height="200" rx="8" fill="#005a9e" stroke="#003e6b" stroke-width="4"/>
+  <polygon points="110,50 130,50 110,70" fill="#f59e0b"/>
+  <rect x="125" y="65" width="150" height="170" rx="6" fill="url(#metalGrad)" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="135" y="75" width="130" height="150" rx="4" fill="#cbd5e1" opacity="0.4"/>
+  <text x="200" y="115" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" fill="#0068b5" text-anchor="middle" letter-spacing="1">intel</text>
+  <text x="200" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">CORE i5</text>
+  <rect x="150" y="158" width="100" height="2" fill="#0068b5"/>
+  <text x="200" y="180" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">13400F</text>
+  <text x="200" y="202" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">LGA1700 • 4.6 GHz</text>
+  <circle cx="120" cy="150" r="3" fill="#38bdf8"/>
+  <circle cx="280" cy="150" r="3" fill="#38bdf8"/>
+</svg>

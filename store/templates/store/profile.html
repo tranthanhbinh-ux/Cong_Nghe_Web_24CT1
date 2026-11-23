@@ -1,0 +1,56 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Thông Tin Tài Khoản - BuildGear{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-4">
+    <div class="col-md-7">
+        <div class="card shadow-sm border-0 rounded-4 p-4 bg-white">
+            <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: #0dcaf0; color: #fff; font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+                    {{ request.user.first_name|default:request.user.username|make_list|first|upper }}
+                </div>
+                <div>
+                    <h4 class="fw-bold mb-0">{{ request.user.first_name|default:request.user.username }}</h4>
+                    <span class="badge {% if request.user.is_staff %}bg-danger{% else %}bg-primary{% endif %}">
+                        {% if request.user.is_staff %}Quản Trị Viên (Staff){% else %}Khách Hàng{% endif %}
+                    </span>
+                    <small class="text-muted ms-2">Tham gia: {{ request.user.date_joined|date:"d/m/Y" }}</small>
+                </div>
+            </div>
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Tên đăng nhập</label>
+                    <input type="text" class="form-control bg-light" value="{{ request.user.username }}" disabled />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Họ và tên</label>
+                    <input type="text" name="fullname" class="form-control" value="{{ request.user.first_name }}" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Email</label>
+                    <input type="email" name="email" class="form-control" value="{{ request.user.email }}" />
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold small">Đổi mật khẩu mới (để trống nếu giữ nguyên)</label>
+                    <input type="password" name="new_password" class="form-control" placeholder="Nhập mật khẩu mới nếu muốn đổi" />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-info text-white fw-bold px-4">
+                        <i class="fa-solid fa-floppy-disk me-1"></i> Lưu Thay Đổi
+                    </button>
+                    <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+                        Về trang chủ
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

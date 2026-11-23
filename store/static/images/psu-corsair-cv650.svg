@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="psuBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#psuBg)" rx="16"/>
+  <rect x="80" y="50" width="240" height="185" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="3"/>
+  <circle cx="160" cy="142" r="55" fill="#09090b" stroke="#52525b" stroke-width="2"/>
+  <circle cx="160" cy="142" r="42" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+  <rect x="235" y="70" width="75" height="145" rx="4" fill="#27272a"/>
+  <text x="272" y="95" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#facc15" text-anchor="middle">CORSAIR</text>
+  <text x="272" y="125" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">CV650</text>
+  <rect x="245" y="145" width="55" height="50" rx="4" fill="url(#bronzeGrad)"/>
+  <text x="272" y="165" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">80 PLUS</text>
+  <text x="272" y="180" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="800" fill="#fde68a" text-anchor="middle">BRONZE</text>
+  <text x="200" y="260" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="800" fill="#f8fafc" text-anchor="middle">Nguồn Corsair CV650 650W 80 Plus Bronze</text>
+</svg>

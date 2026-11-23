@@ -1,0 +1,308 @@
+/* ========================================================
+   BuildGear Admin Custom CSS
+   - Fix Select2, Dropdown & Form Controls in Dark Mode
+   - High-contrast Dashboard KPI Cards
+   - Clean, Beautiful Admin Data Tables
+   ======================================================== */
+
+/* 1. Select2 Dropdown Container */
+.select2-container--default .select2-dropdown {
+    background-color: #212529 !important;
+    border: 1px solid #495057 !important;
+    color: #f8f9fa !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 2. Select2 Options inside Dropdown */
+.select2-container--default .select2-results__option {
+    color: #e2e8f0 !important;
+    background-color: #212529 !important;
+    padding: 8px 12px !important;
+}
+
+/* Hover / Highlighted Option */
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+/* Selected Option */
+.select2-container--default .select2-results__option[aria-selected="true"] {
+    background-color: #343a40 !important;
+    color: #0dcaf0 !important;
+    font-weight: 600;
+}
+
+/* 3. Search Field inside Select2 Dropdown */
+.select2-container--default .select2-search--dropdown {
+    background-color: #1a1e21 !important;
+    padding: 6px !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    background-color: #2b3035 !important;
+    border: 1px solid #495057 !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    padding: 6px 10px !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus {
+    border-color: #0dcaf0 !important;
+    outline: none !important;
+}
+
+/* 4. Select2 Main Selection Box */
+.select2-container--default .select2-selection--single {
+    background-color: #2b3035 !important;
+    border: 1px solid #495057 !important;
+    color: #ffffff !important;
+    height: 38px !important;
+    border-radius: 4px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #ffffff !important;
+    line-height: 36px !important;
+    padding-left: 12px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #ced4da transparent transparent transparent !important;
+}
+
+/* 5. Native HTML <select> elements and Action Bar Dropdown */
+select, 
+select.form-control,
+.actions select,
+.changelist-form select {
+    background-color: #2b3035 !important;
+    color: #ffffff !important;
+    border: 1px solid #495057 !important;
+    border-radius: 4px !important;
+    padding: 6px 10px !important;
+}
+
+select option {
+    background-color: #212529 !important;
+    color: #ffffff !important;
+    padding: 8px !important;
+}
+
+select option:checked,
+select option:hover {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+/* 6. Form Controls in Dark Mode */
+.form-control:focus {
+    background-color: #2b3035 !important;
+    color: #ffffff !important;
+    border-color: #0dcaf0 !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.25) !important;
+}
+
+/* 7. Action Bar styling */
+.actions {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    padding: 10px 14px !important;
+    border-radius: 6px !important;
+    margin-bottom: 15px !important;
+}
+
+.actions label {
+    color: #e2e8f0 !important;
+    font-weight: 500 !important;
+}
+
+/* 8. Dashboard High-Contrast KPI Cards */
+.kpi-card {
+    border-radius: 10px !important;
+    padding: 20px 22px 14px 22px !important;
+    margin-bottom: 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55) !important;
+}
+
+.kpi-card-revenue {
+    background: linear-gradient(135deg, #064e3b 0%, #059669 60%, #10b981 100%) !important;
+}
+
+.kpi-card-orders {
+    background: linear-gradient(135deg, #78350f 0%, #d97706 60%, #f59e0b 100%) !important;
+}
+
+.kpi-card-stock {
+    background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 60%, #38bdf8 100%) !important;
+}
+
+.kpi-card-customers {
+    background: linear-gradient(135deg, #312e81 0%, #4f46e5 60%, #6366f1 100%) !important;
+}
+
+.kpi-card h3 {
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    margin: 0 0 4px 0 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.5px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.kpi-card p {
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    margin: 0 0 14px 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.kpi-card .kpi-icon {
+    position: absolute !important;
+    right: 18px !important;
+    top: 18px !important;
+    font-size: 2.8rem !important;
+    color: rgba(255, 255, 255, 0.28) !important;
+    pointer-events: none !important;
+}
+
+.kpi-card .kpi-footer {
+    display: block !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+.kpi-card .kpi-footer:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+/* 9. High-Contrast, Clean Admin Data Tables */
+#result_list {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    background-color: #0f172a !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+#result_list thead th {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 2px solid #0284c7 !important;
+    border-top: none !important;
+    padding: 13px 12px !important;
+    vertical-align: middle !important;
+}
+
+#result_list thead th a {
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+
+#result_list tbody tr {
+    transition: background-color 0.15s ease-in-out !important;
+}
+
+#result_list tbody tr:nth-of-type(odd) {
+    background-color: #1e293b !important;
+}
+
+#result_list tbody tr:nth-of-type(even) {
+    background-color: #162032 !important;
+}
+
+#result_list tbody tr:hover {
+    background-color: #2d3d54 !important;
+}
+
+#result_list tbody td {
+    padding: 11px 12px !important;
+    vertical-align: middle !important;
+    border-top: 1px solid #334155 !important;
+    color: #f8fafc !important;
+    font-size: 13.5px !important;
+}
+
+/* Inputs in table for list_editable */
+#result_list input[type="text"],
+#result_list input[type="number"],
+#result_list select {
+    background-color: #0b1120 !important;
+    color: #38bdf8 !important;
+    border: 1px solid #475569 !important;
+    border-radius: 5px !important;
+    padding: 5px 8px !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#result_list input[type="text"]:focus,
+#result_list input[type="number"]:focus,
+#result_list select:focus {
+    background-color: #0f172a !important;
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25) !important;
+    outline: none !important;
+}
+
+/* Checkboxes */
+#result_list input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: #0284c7;
+}
+
+/* Submit row for list_editable */
+.submit-row {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    padding: 12px 18px !important;
+    margin-top: 15px !important;
+}
+
+.submit-row input[type="submit"] {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    padding: 8px 24px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35) !important;
+    cursor: pointer !important;
+}
+
+.submit-row input[type="submit"]:hover {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+    transform: translateY(-1px);
+}
