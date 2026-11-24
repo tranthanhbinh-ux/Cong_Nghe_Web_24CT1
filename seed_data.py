@@ -66,7 +66,7 @@ def run_seed():
         brand_objs[b_name] = brand
     print(f"✅ Đã tạo {len(brand_objs)} thương hiệu.")
 
-    # 5. Tạo 7 linh kiện PC chính hãng ban đầu
+    # 5. Tạo 8 linh kiện PC chính hãng kèm ảnh thật
     products_data = [
         {
             "name": "CPU Intel Core i5-13400F",
@@ -75,6 +75,7 @@ def run_seed():
             "price": 5290000,
             "discount_price": 4890000,
             "stock_quantity": 20,
+            "image": "products/images_A5NA1u7.png",
             "image_url": "/static/images/cpu-i5-13400f.svg",
             "specifications": "10 Nhân 16 Luồng, Turbo 4.60 GHz, 20MB Cache, Socket LGA 1700",
             "description": "CPU quốc dân tầm trung chơi game và làm việc cực mượt mà không lo giật lag.",
@@ -86,6 +87,7 @@ def run_seed():
             "price": 5990000,
             "discount_price": 5500000,
             "stock_quantity": 15,
+            "image": "products/gearvn-amd-ryzen-5-7600-1_fea6e6c8d31a452fb221d1d78261bc47_316933a0.png",
             "image_url": "/static/images/cpu-r5-7600.svg",
             "specifications": "6 Nhân 12 Luồng, Turbo 5.1 GHz, 38MB Cache, Socket AM5",
             "description": "CPU thế hệ mới của AMD với kiến trúc Zen 4 mạnh mẽ, tối ưu hoá tối đa cho game thủ.",
@@ -97,6 +99,7 @@ def run_seed():
             "price": 8890000,
             "discount_price": 8490000,
             "stock_quantity": 10,
+            "image": "products/vga-asus-dual-geforce-rtx-4060-oc-edition-8gb-gddr6-dual-rtx4060-o8g-5c2bdc9b-2c7.png",
             "image_url": "/static/images/vga-rtx4060-asus.svg",
             "specifications": "8GB GDDR6, 128-bit, PCIe 4.0, 2 Quạt tản nhiệt, DLSS 3",
             "description": "Card đồ họa bán chạy nhất phân khúc chiến game 1080p và 2K với công nghệ DLSS 3 siêu tốc.",
@@ -108,6 +111,7 @@ def run_seed():
             "price": 3890000,
             "discount_price": 3650000,
             "stock_quantity": 25,
+            "image": "products/mainboard-pc-msi-b760m-gaming-plus-wifi-4.png",
             "image_url": "/static/images/main-msi-b760m.svg",
             "specifications": "Socket LGA 1700, 4 khe DDR5, PCIe 4.0, Wifi 6E tích hợp",
             "description": "Mainboard tầm trung tối ưu cho CPU Intel Gen 12, 13, 14 với tản nhiệt VRM dày dặn.",
@@ -116,9 +120,10 @@ def run_seed():
             "name": "RAM Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
             "category": cat_objs["RAM - Bộ nhớ trong"],
             "brand": brand_objs["Corsair"],
-            "price": 3490000,
-            "discount_price": 3190000,
+            "price": 14500000,
+            "discount_price": 11500000,
             "stock_quantity": 30,
+            "image": "products/ramddr5.png",
             "image_url": "/static/images/ram-corsair-ddr5.svg",
             "specifications": "Kit 32GB (2x16GB), Bus 6000MHz, Chuẩn DDR5, Đèn LED RGB",
             "description": "RAM hiệu năng cao hỗ trợ Intel XMP 3.0 và AMD EXPO, hệ thống LED RGB rực rỡ.",
@@ -130,6 +135,7 @@ def run_seed():
             "price": 1790000,
             "discount_price": 1590000,
             "stock_quantity": 50,
+            "image": "products/1t-3_18a52eee41f24df19be45b20c57f2d90_grande.png",
             "image_url": "/static/images/ssd-kingston-1tb.svg",
             "specifications": "Dung lượng 1TB, Chuẩn NVMe Gen 4x4, Tốc độ đọc 3500MB/s, ghi 2100MB/s",
             "description": "Ổ cứng tốc độ cao khởi động hệ điều hành và tải game nặng trong tích tắc.",
@@ -141,9 +147,22 @@ def run_seed():
             "price": 1590000,
             "discount_price": 1390000,
             "stock_quantity": 40,
+            "image": "products/images.png",
             "image_url": "/static/images/psu-corsair-cv650.svg",
             "specifications": "Công suất 650W, Chuẩn 80 Plus Bronze, Quạt tản 120mm êm ái",
             "description": "Cung cấp nguồn điện ổn định cho hệ thống PC gaming hiện đại.",
+        },
+        {
+            "name": "Vỏ máy tính ASUS ROG Hyperion GR701 White",
+            "category": cat_objs["Case - Vỏ máy tính"],
+            "brand": brand_objs["ASUS"],
+            "price": 12000000,
+            "discount_price": 11390000,
+            "stock_quantity": 10,
+            "image": "products/h732__15__7b6a970b494f454db8846e6b753a3dd0_large.png",
+            "image_url": "/static/images/banner-pc-gaming.svg",
+            "specifications": "Hỗ trợ 2 radiator 420mm, 4 quạt 140mm, khung nhôm phay cao cấp, kính cường lực",
+            "description": "Siêu phẩm case Full Tower cao cấp từ ASUS ROG cho những cỗ máy PC tối thượng.",
         },
     ]
 
@@ -152,6 +171,12 @@ def run_seed():
             name=p_data["name"],
             defaults=p_data
         )
+        # Update image and prices if already exists
+        if not created:
+            p.image = p_data.get("image", p.image)
+            p.price = p_data.get("price", p.price)
+            p.discount_price = p_data.get("discount_price", p.discount_price)
+            p.save()
         if created:
             print(f"  + Đã thêm sản phẩm: {p.name}")
 

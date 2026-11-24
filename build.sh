@@ -11,5 +11,5 @@ python manage.py collectstatic --no-input
 # Apply database migrations
 python manage.py migrate
 
-# Seed initial data (categories, brands, products, 3 user roles)
-python seed_data.py || true
+# Load complete database data (all 8 products with real images, users, categories)
+python manage.py loaddata datadump.json || python seed_data.py || true

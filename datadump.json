@@ -20,7 +20,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$600000$o8xnZikdLtP4ZgikIu3HVZ$GmrwKTYoj4aawscaSIZ6iFUIOG7I8kSROC+XKGMo97s=",
-    "last_login": null,
+    "last_login": "2026-11-23T18:13:47.816Z",
     "is_superuser": false,
     "username": "customer",
     "first_name": "Nguyễn Văn A",
@@ -31,6 +31,124 @@
     "date_joined": "2026-11-05T15:24:56.118Z",
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$T5yaEzLVZah2Hh0c0jlpGr$c7Nu9Z58AfhCINdAHLYaOXUyp1Fc40nFHTR4sOWCYOk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "staff",
+    "first_name": "Nhân Viên",
+    "last_name": "Kinh Doanh",
+    "email": "nhanvien@buildgear.vn",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-23T19:16:58.453Z",
+    "groups": [],
+    "user_permissions": [
+      [
+        "add_brand",
+        "store",
+        "brand"
+      ],
+      [
+        "change_brand",
+        "store",
+        "brand"
+      ],
+      [
+        "delete_brand",
+        "store",
+        "brand"
+      ],
+      [
+        "view_brand",
+        "store",
+        "brand"
+      ],
+      [
+        "add_category",
+        "store",
+        "category"
+      ],
+      [
+        "change_category",
+        "store",
+        "category"
+      ],
+      [
+        "delete_category",
+        "store",
+        "category"
+      ],
+      [
+        "view_category",
+        "store",
+        "category"
+      ],
+      [
+        "add_order",
+        "store",
+        "order"
+      ],
+      [
+        "change_order",
+        "store",
+        "order"
+      ],
+      [
+        "delete_order",
+        "store",
+        "order"
+      ],
+      [
+        "view_order",
+        "store",
+        "order"
+      ],
+      [
+        "add_orderitem",
+        "store",
+        "orderitem"
+      ],
+      [
+        "change_orderitem",
+        "store",
+        "orderitem"
+      ],
+      [
+        "delete_orderitem",
+        "store",
+        "orderitem"
+      ],
+      [
+        "view_orderitem",
+        "store",
+        "orderitem"
+      ],
+      [
+        "add_product",
+        "store",
+        "product"
+      ],
+      [
+        "change_product",
+        "store",
+        "product"
+      ],
+      [
+        "delete_product",
+        "store",
+        "product"
+      ],
+      [
+        "view_product",
+        "store",
+        "product"
+      ]
+    ]
   }
 },
 {
@@ -45,8 +163,16 @@
   "model": "sessions.session",
   "pk": "ikkpfh2ndauz0a0tjxkigpimr0f6g6x0",
   "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGlm2E_8o6TmDtetd4wBypDipEHeHSCmgfTPzXiLBtta0dV7SROIstDj9bgj5wW0HdId2m2We27pMKHdFHrTL60z8vBzu30GFXr-1xcAqGoc2D8EajTS4EZm4kPExewhOG6uVD6Ygso-js-QUW88ABbV4fwDe3jgK:1xVQwu:MNPEVQc3jV4UnLE6twZut1rmLshzrgRKhbtq5PTvdMs",
-    "expire_date": "2026-12-07T10:07:00.716Z"
+    "session_data": ".eJxVjjsOgzAQRO_iOrKwwT_K9JzB2vUuMUkEEjYV4u4JEkXSznszml1E2GqOW-E1TiR6ocTtN0NIL55PQE-YH4tMy1zXCeWpyIsWOSzE7_vl_g1kKPnbNui5CdqiSa03WiG1tkMmHkm7kBx4q7RRjfN6RGQXOmvINmwcA4x4vkqwVtHvx_EBHhs7Vg:1xVZEp:C1uSMGbWxtA7WArf1gte7M3D-atRab24AI8MBHaeb-c",
+    "expire_date": "2026-12-07T18:58:03.239Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "p2ovaekznb92hx5minz04isb4ohd3unj",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWlKB8aOS_ecgUxniqCmTSisjHdXEha6_e-9_zIDb-s0bDUtw6zmYrw5_W6R5ZHyDvTO-VaslLwuc7S7Yg9abV80Pa-H-3cwcZ2-NQYJouBYWyAYRfxIwv7cBUTotMGxdSyinqiFEFMU9OoaTNgBETnz_gDsmze0:1xVYXz:cTmTroKQbl0KrpIuBH53NI8RvkR94NyPIkuWCZmVbpE",
+    "expire_date": "2026-12-07T18:13:47.823Z"
   }
 },
 {
@@ -171,7 +297,7 @@
     "price": "5290000",
     "discount_price": "4890000",
     "stock_quantity": 20,
-    "image": "",
+    "image": "products/images_A5NA1u7.png",
     "image_url": "/static/images/cpu-i5-13400f.svg",
     "specifications": "10 Nhân 16 Luồng, Turbo 4.60 GHz, 20MB Cache, Socket LGA 1700",
     "description": "CPU quốc dân tầm trung chơi game và làm việc cực mượt mà không lo giật lag.",
@@ -189,7 +315,7 @@
     "price": "5990000",
     "discount_price": "5500000",
     "stock_quantity": 15,
-    "image": "",
+    "image": "products/gearvn-amd-ryzen-5-7600-1_fea6e6c8d31a452fb221d1d78261bc47_316933a0.png",
     "image_url": "/static/images/cpu-r5-7600.svg",
     "specifications": "6 Nhân 12 Luồng, Turbo 5.1 GHz, 38MB Cache, Socket AM5",
     "description": "CPU thế hệ mới của AMD với kiến trúc Zen 4 mạnh mẽ, tối ưu hoá tối đa cho game thủ.",
@@ -207,7 +333,7 @@
     "price": "8890000",
     "discount_price": "8490000",
     "stock_quantity": 10,
-    "image": "",
+    "image": "products/vga-asus-dual-geforce-rtx-4060-oc-edition-8gb-gddr6-dual-rtx4060-o8g-5c2bdc9b-2c7.png",
     "image_url": "/static/images/vga-rtx4060-asus.svg",
     "specifications": "8GB GDDR6, 128-bit, PCIe 4.0, 2 Quạt tản nhiệt, DLSS 3",
     "description": "Card đồ họa bán chạy nhất phân khúc chiến game 1080p và 2K với công nghệ DLSS 3 siêu tốc.",
@@ -225,7 +351,7 @@
     "price": "3890000",
     "discount_price": "3650000",
     "stock_quantity": 25,
-    "image": "",
+    "image": "products/mainboard-pc-msi-b760m-gaming-plus-wifi-4.png",
     "image_url": "/static/images/main-msi-b760m.svg",
     "specifications": "Socket LGA 1700, 4 khe DDR5, PCIe 4.0, Wifi 6E tích hợp",
     "description": "Mainboard tầm trung tối ưu cho CPU Intel Gen 12, 13, 14 với tản nhiệt VRM dày dặn.",
@@ -240,10 +366,10 @@
     "name": "RAM Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
     "category": 4,
     "brand": 7,
-    "price": "3490000",
-    "discount_price": "3190000",
+    "price": "14500000",
+    "discount_price": "11500000",
     "stock_quantity": 30,
-    "image": "",
+    "image": "products/ramddr5.png",
     "image_url": "/static/images/ram-corsair-ddr5.svg",
     "specifications": "Kit 32GB (2x16GB), Bus 6000MHz, Chuẩn DDR5, Đèn LED RGB",
     "description": "RAM hiệu năng cao hỗ trợ Intel XMP 3.0 và AMD EXPO, hệ thống LED RGB rực rỡ.",
@@ -261,7 +387,7 @@
     "price": "1790000",
     "discount_price": "1590000",
     "stock_quantity": 50,
-    "image": "",
+    "image": "products/1t-3_18a52eee41f24df19be45b20c57f2d90_grande.png",
     "image_url": "/static/images/ssd-kingston-1tb.svg",
     "specifications": "Dung lượng 1TB, Chuẩn NVMe Gen 4x4, Tốc độ đọc 3500MB/s, ghi 2100MB/s",
     "description": "Ổ cứng tốc độ cao khởi động hệ điều hành và tải game nặng trong tích tắc.",
@@ -278,13 +404,255 @@
     "brand": 7,
     "price": "1590000",
     "discount_price": "1390000",
-    "stock_quantity": 40,
-    "image": "",
+    "stock_quantity": 39,
+    "image": "products/images.png",
     "image_url": "/static/images/psu-corsair-cv650.svg",
     "specifications": "Công suất 650W, Chuẩn 80 Plus Bronze, Quạt tản 120mm êm ái",
     "description": "Cung cấp nguồn điện ổn định cho hệ thống PC gaming hiện đại.",
     "is_active": true,
     "created_at": "2026-11-05T15:27:51.558Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "name": "Vỏ máy tính ASUS ROG Hyperion GR701 White",
+    "category": 7,
+    "brand": 4,
+    "price": "12000000",
+    "discount_price": "11390000",
+    "stock_quantity": 5,
+    "image": "products/h732__15__7b6a970b494f454db8846e6b753a3dd0_large.png",
+    "image_url": null,
+    "specifications": "",
+    "description": "",
+    "is_active": true,
+    "created_at": "2026-11-23T19:02:15.824Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "customer_name": "tran thanh bi",
+    "customer_phone": "2314151515",
+    "shipping_address": "aeqeeaacac",
+    "order_date": "2026-11-23T10:50:50.214Z",
+    "total_amount": "1390000",
+    "status": "Đã hoàn thành",
+    "note": ""
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 7,
+    "quantity": 1,
+    "unit_price": "1390000"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-11-23T10:51:35.164Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "order"
+    ],
+    "object_id": "1",
+    "object_repr": "Đơn hàng #1 - tran thanh bi",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tr\\u1ea1ng th\\u00e1i \\u0111\\u01a1n\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-11-23T18:17:01.952Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "order"
+    ],
+    "object_id": "2",
+    "object_repr": "Đơn hàng #2 - Nguyễn Văn An",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-11-23T18:17:13.915Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "order"
+    ],
+    "object_id": "3",
+    "object_repr": "Đơn hàng #3 - Trần Minh Tuấn",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-11-23T18:50:50.204Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "7",
+    "object_repr": "Nguồn Corsair CV650 650W 80 Plus Bronze",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-11-23T18:52:07.742Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "6",
+    "object_repr": "Ổ cứng SSD Kingston NV2 1TB PCIe Gen4 NVMe M.2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-11-23T18:54:26.365Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "5",
+    "object_repr": "RAM Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gi\\u00e1 g\\u1ed1c (VN\\u0110)\", \"Gi\\u00e1 khuy\\u1ebfn m\\u00e3i (VN\\u0110)\", \"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-11-23T18:56:10.889Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "Mainboard MSI B760M GAMING PLUS WIFI DDR5",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-11-23T18:57:31.440Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "VGA ASUS Dual GeForce RTX 4060 EVO OC 8GB",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-11-23T18:58:50.054Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "CPU AMD Ryzen 5 7600",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-11-23T18:59:43.642Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "CPU Intel Core i5-13400F",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u1ea2nh t\\u1ea3i l\\u00ean\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-11-23T19:02:15.827Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "Vỏ máy tính ASUS ROG Hyperion GR701 White",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
   }
 }
 ]
