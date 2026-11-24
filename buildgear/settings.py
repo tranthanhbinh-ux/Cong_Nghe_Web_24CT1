@@ -26,7 +26,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -34,6 +33,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+try:
+    import whitenoise
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+except ImportError:
+    pass
 
 ROOT_URLCONF = 'buildgear.urls'
 
@@ -109,7 +114,11 @@ STATICFILES_DIRS = [
     BASE_DIR / 'store' / 'static',
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+try:
+    import whitenoise
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+except ImportError:
+    pass
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
