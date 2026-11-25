@@ -145,18 +145,24 @@ class OrderItemInline(admin.TabularInline):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'customer_name', 'customer_phone', 'total_amount_display', 'status_badge', 'order_date')
-    list_filter = ('status', 'order_date')
+    list_display = ('id', 'customer_name', 'customer_phone', 'total_amount_display', 'payment_badge', 'is_paid', 'status_badge', 'order_date')
+    list_filter = ('status', 'payment_method', 'is_paid', 'order_date')
+    list_editable = ('is_paid',)
     search_fields = ('customer_name', 'customer_phone', 'shipping_address')
-    list_editable = ()
     inlines = [OrderItemInline]
     list_per_page = 20
-    actions = ['mark_completed', 'mark_shipping', 'mark_cancelled']
+    actions = ['mark_completed', 'mark_shipping', 'mark_paid', 'mark_cancelled']
 
     def total_amount_display(self, obj):
         val = f"{obj.total_amount:,.0f} đ".replace(',', '.')
         return mark_safe(f'<strong class="text-success">{val}</strong>')
     total_amount_display.short_description = "Tổng tiền"
+
+    def payment_badge(self, obj):
+        if obj.payment_method == 'BANK_QR':
+            return mark_safe('<span class="badge badge-primary" style="font-size: 11px; padding: 5px 8px; background-color: #0d6efd;"><i class="fas fa-qrcode mr-1"></i> VietQR</span>')
+        return mark_safe('<span class="badge badge-success" style="font-size: 11px; padding: 5px 8px; background-color: #198754;"><i class="fas fa-money-bill-wave mr-1"></i> Tiền mặt (COD)</span>')
+    payment_badge.short_description = "Hình thức TT"
 
     def status_badge(self, obj):
         badge_styles = {
@@ -178,6 +184,11 @@ class OrderAdmin(admin.ModelAdmin):
     def mark_shipping(self, request, queryset):
         rows = queryset.update(status='Đang giao')
         self.message_user(request, f"Đã cập nhật {rows} đơn hàng sang 'Đang giao'.")
+
+    @admin.action(description="Đánh dấu: Đã nhận tiền thanh toán")
+    def mark_paid(self, request, queryset):
+        rows = queryset.update(is_paid=True)
+        self.message_user(request, f"Đã cập nhật {rows} đơn hàng thành 'Đã nhận thanh toán'.")
 
     @admin.action(description="Chuyển trạng thái sang: Đã hủy")
     def mark_cancelled(self, request, queryset):

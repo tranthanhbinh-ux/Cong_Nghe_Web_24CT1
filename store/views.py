@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 from decimal import Decimal
+import urllib.parse
 
 from .models import Category, Brand, Product, Order, OrderItem
 
@@ -169,6 +170,7 @@ def checkout(request):
         customer_name = request.POST.get('customer_name', '').strip()
         customer_phone = request.POST.get('customer_phone', '').strip()
         shipping_address = request.POST.get('shipping_address', '').strip()
+        payment_method = request.POST.get('payment_method', 'COD').strip()
         note = request.POST.get('note', '').strip()
 
         if not customer_name or not customer_phone or not shipping_address:
@@ -180,6 +182,7 @@ def checkout(request):
             customer_name=customer_name,
             customer_phone=customer_phone,
             shipping_address=shipping_address,
+            payment_method=payment_method,
             total_amount=total_amount,
             status='Chờ xử lý',
             note=note
@@ -223,7 +226,37 @@ def checkout(request):
 
 def order_success(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    return render(request, 'store/order_success.html', {'order': order})
+    
+    vietqr_data = None
+    if order.payment_method == 'BANK_QR':
+        bank_id = "MB"            # Ngân hàng Quân Đội (MB Bank)
+        bank_name = "Ngân hàng TMCP Quân Đội (MB Bank)"
+        account_no = "0325511673" # Số tài khoản thụ hưởng
+        account_name = "TRAN THANH BINH"
+        memo = f"BUILDGEAR DH{order.id}"
+        amount = int(order.total_amount)
+        
+        # Mã hóa tham số để tạo URL VietQR an toàn và chuẩn xác
+        encoded_memo = urllib.parse.quote(memo)
+        encoded_name = urllib.parse.quote(account_name)
+        
+        # Tạo URL VietQR chuẩn quốc gia (tự động điền số tiền và nội dung chuyển khoản)
+        qr_url = f"https://img.vietqr.io/image/{bank_id}-{account_no}-compact2.png?amount={amount}&addInfo={encoded_memo}&accountName={encoded_name}"
+        
+        vietqr_data = {
+            'bank_name': bank_name,
+            'bank_id': bank_id,
+            'account_no': account_no,
+            'account_name': "TRẦN THANH BÌNH",
+            'memo': memo,
+            'amount': amount,
+            'qr_url': qr_url,
+        }
+
+    return render(request, 'store/order_success.html', {
+        'order': order,
+        'vietqr': vietqr_data
+    })
 
 # --- TÀI KHOẢN (AUTH & PROFILE) ---
 

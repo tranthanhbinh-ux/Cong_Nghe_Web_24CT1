@@ -70,12 +70,19 @@ class Order(models.Model):
         ('Đã hủy', 'Đã hủy'),
     ]
 
+    PAYMENT_METHOD_CHOICES = [
+        ('COD', 'Thanh toán tiền mặt khi nhận hàng (COD)'),
+        ('BANK_QR', 'Chuyển khoản VietQR (Quét mã QR ngân hàng)'),
+    ]
+
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="orders", verbose_name="Tài khoản")
     customer_name = models.CharField(max_length=100, verbose_name="Tên người nhận")
     customer_phone = models.CharField(max_length=20, verbose_name="Số điện thoại")
     shipping_address = models.CharField(max_length=250, verbose_name="Địa chỉ giao hàng")
     order_date = models.DateTimeField(auto_now_add=True, verbose_name="Ngày đặt")
     total_amount = models.DecimalField(max_digits=14, decimal_places=0, verbose_name="Tổng tiền (VNĐ)")
+    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES, default='COD', verbose_name="Phương thức thanh toán")
+    is_paid = models.BooleanField(default=False, verbose_name="Đã thanh toán")
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='Chờ xử lý', verbose_name="Trạng thái đơn")
     note = models.TextField(max_length=500, blank=True, null=True, verbose_name="Ghi chú giao hàng")
 

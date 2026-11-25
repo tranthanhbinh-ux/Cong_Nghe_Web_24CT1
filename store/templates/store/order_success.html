@@ -19,9 +19,88 @@
                 <p class="mb-1"><strong>Số điện thoại:</strong> {{ order.customer_phone }}</p>
                 <p class="mb-1"><strong>Địa chỉ nhận hàng:</strong> {{ order.shipping_address }}</p>
                 <p class="mb-1"><strong>Ngày đặt:</strong> {{ order.order_date|date:"d/m/Y H:i" }}</p>
+                <p class="mb-1"><strong>Hình thức thanh toán:</strong> 
+                    {% if order.payment_method == 'BANK_QR' %}
+                        <span class="badge bg-primary"><i class="fa-solid fa-qrcode me-1"></i>Chuyển khoản VietQR</span>
+                    {% else %}
+                        <span class="badge bg-success"><i class="fa-solid fa-money-bill-wave me-1"></i>Tiền mặt (COD)</span>
+                    {% endif %}
+                </p>
                 <p class="mb-1"><strong>Trạng thái:</strong> <span class="badge bg-warning text-dark">{{ order.status }}</span></p>
                 <p class="mb-0 fs-5 mt-3 pt-2 border-top"><strong>Tổng tiền thanh toán:</strong> <span class="text-danger fw-bold">{{ order.total_amount|intcomma }} đ</span></p>
             </div>
+
+            {% if vietqr %}
+            <!-- Khung thanh toán VietQR Động -->
+            <div class="card border-primary shadow-sm mb-4 text-start rounded-4 overflow-hidden">
+                <div class="card-header bg-primary text-white py-3 px-4 d-flex justify-content-between align-items-center">
+                    <span class="fw-bold fs-5"><i class="fa-solid fa-qrcode me-2"></i>Thanh Toán Chuyển Khoản Qua VietQR</span>
+                    <span class="badge bg-light text-primary fw-bold">Tự động điền số tiền</span>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-5 text-center border-end-md pb-3 pb-md-0">
+                            <p class="small text-muted mb-2 fw-bold">Mở App Ngân hàng hoặc Ví điện tử để quét</p>
+                            <img src="{{ vietqr.qr_url }}" alt="Mã VietQR Thanh Toán" class="img-fluid rounded-3 border p-1 shadow-sm mb-2" style="max-width: 250px;" />
+                            <div class="badge bg-success-subtle text-success border border-success d-block py-1">
+                                <i class="fa-solid fa-bolt me-1"></i> Quét là tự điền đúng {{ vietqr.amount|intcomma }} đ
+                            </div>
+                        </div>
+                        <div class="col-md-7 ps-md-4">
+                            <h6 class="text-secondary fw-bold text-uppercase small mb-3">Thông tin tài khoản nhận tiền</h6>
+                            
+                            <div class="mb-2">
+                                <span class="text-muted d-block small">Ngân hàng:</span>
+                                <strong class="fs-6 text-dark">{{ vietqr.bank_name }}</strong>
+                            </div>
+
+                            <div class="mb-2 d-flex align-items-center justify-content-between bg-light p-2 rounded">
+                                <div>
+                                    <span class="text-muted d-block small">Số tài khoản:</span>
+                                    <span class="fw-bold fs-5 text-primary font-monospace">{{ vietqr.account_no }}</span>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ vietqr.account_no }}', this)">
+                                    <i class="fa-solid fa-copy me-1"></i>Sao chép
+                                </button>
+                            </div>
+
+                            <div class="mb-2">
+                                <span class="text-muted d-block small">Chủ tài khoản:</span>
+                                <strong class="text-dark">{{ vietqr.account_name }}</strong>
+                            </div>
+
+                            <div class="mb-2">
+                                <span class="text-muted d-block small">Số tiền cần chuyển:</span>
+                                <strong class="text-danger fs-5">{{ vietqr.amount|intcomma }} đ</strong>
+                            </div>
+
+                            <div class="mb-3 d-flex align-items-center justify-content-between bg-warning-subtle p-2 rounded border border-warning">
+                                <div>
+                                    <span class="text-muted d-block small">Nội dung chuyển khoản (Bắt buộc):</span>
+                                    <span class="fw-bold text-dark font-monospace">{{ vietqr.memo }}</span>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-outline-dark" onclick="copyToClipboard('{{ vietqr.memo }}', this)">
+                                    <i class="fa-solid fa-copy me-1"></i>Sao chép
+                                </button>
+                            </div>
+
+                            <p class="text-muted small mb-0"><i class="fa-solid fa-circle-info text-info me-1"></i>Sau khi nhận được tiền chuyển khoản, BuildGear sẽ lập tức chuẩn bị linh kiện và giao tới bạn nhanh nhất!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <!-- Thông báo phương thức COD -->
+            <div class="alert alert-success border text-start p-3 rounded-3 mb-4">
+                <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-money-bill-wave text-success fs-3 me-3"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">Phương thức: Tiền mặt khi nhận hàng (COD)</h6>
+                        <small class="text-muted">Bạn vui lòng chuẩn bị số tiền <strong>{{ order.total_amount|intcomma }} đ</strong> để thanh toán trực tiếp cho nhân viên giao hàng sau khi kiểm tra linh kiện.</small>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
 
             <p class="text-muted small">Đội ngũ kỹ thuật viên BuildGear sẽ liên hệ với bạn qua SĐT để xác nhận đơn hàng và chuẩn bị linh kiện giao tới bạn nhanh nhất.</p>
 
@@ -33,4 +112,36 @@
         </div>
     </div>
 </div>
+
+<script>
+function copyToClipboard(text, btn) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showSuccess, fallbackCopy);
+    } else {
+        fallbackCopy();
+    }
+
+    function showSuccess() {
+        const oldHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check me-1"></i>Đã chép!';
+        btn.classList.remove('btn-outline-secondary', 'btn-outline-dark');
+        btn.classList.add('btn-success');
+        setTimeout(() => {
+            btn.innerHTML = oldHtml;
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-outline-secondary');
+        }, 2000);
+    }
+
+    function fallbackCopy() {
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        showSuccess();
+    }
+}
+</script>
 {% endblock %}
